@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { ICurrentWeather } from '../icurrent-weather';
 import { map } from 'rxjs/operators';
+import { IWeatherService } from './iweather-service';
 
 interface ICurrentWeatherData {
   weather: [{
@@ -22,13 +23,25 @@ interface ICurrentWeatherData {
 @Injectable({
   providedIn: 'root'
 })
-export class WeatherService {
+export class WeatherService implements IWeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCurrentWeather(city: string, country: string) {
+  getCurrentWeather(search: string | string, country?: string) {
+    let uriParams = ''
+
+    if (typeof search  === 'string') {
+      uriParams = `q=${search}`
+    } else {
+      uriParams = `zip=${search}`
+    }
+
+    if (country) {
+      uriParams = `${uriParams},${country}`
+    }
+
     return this.httpClient.get<ICurrentWeatherData>(
-      `${environment.baseUrl}api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${environment.appId}`  
+      `${environment.baseUrl}api.openweathermap.org/data/2.5/weather?${uriParams}&appid=${environment.appId}`  
     ).pipe(
       map(data => this.transformToICurrentWeather(data))
     )

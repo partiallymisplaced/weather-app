@@ -1,0 +1,5 @@
+<form action="">
+  <input type="text" placeholder="Enter city or zip" [formControl]="search">
+  <!-- <input type="button"> -->
+  <div class='error' *ngIf="search.invalid">{{getErrorMessage()}}</div>
+</form>
