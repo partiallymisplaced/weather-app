@@ -8,7 +8,6 @@ import { ICurrentWeather } from './icurrent-weather';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'local-weather-app';
   currentWeather: ICurrentWeather;
   
   constructor(private weatherService: WeatherService) {}

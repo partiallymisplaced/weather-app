@@ -22,13 +22,12 @@ export class CitySearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.search.valueChanges 
+    this.search.valueChanges
+    .pipe(debounceTime(1000))
     .subscribe((searchValue: string) => {
       if (!this.search.invalid) {
-        .pipe (debounceTime(1000))
-        .subscribe(data => console.log(data));
-
+        this.searchEvent.emit(searchValue)
       }
-    })
+    })  
   }
 }

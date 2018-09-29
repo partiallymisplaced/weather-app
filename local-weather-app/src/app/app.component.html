@@ -2,7 +2,7 @@
 <div style="text-align:center">
 
   <h1>Current Weather</h1>
-  <app-city-search (searchEvent)="doSearch"($event)></app-city-search>  
+  <app-city-search (searchEvent)="doSearch($event)"></app-city-search>  
   <app-current-weather [current]="currentWeather"></app-current-weather>
 
 </div>
