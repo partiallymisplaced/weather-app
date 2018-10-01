@@ -17,8 +17,7 @@ export class CitySearchComponent implements OnInit {
   }
 
   getErrorMessage(){
-    console.log(this.search.errors);
-    return this.search.hasError('minLength') ? 'Minimum characters' : ''
+    return this.search.hasError('minlength') ? 'Enter a minimum of 3 characters' : ''
   }
 
   ngOnInit() {
