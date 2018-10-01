@@ -5,11 +5,14 @@
   </div>
   
   <div>
-    <img [src]='current.image'>
-    <p>{{current.temperature | number:'1.0-0'}} F</p>
-  </div>
+    <p>{{current.temperatureFahrenheit | number:'1.0-0'}} F | 
+      {{current.temperatureCelsius | number:'1.0-0'}} C
+    </p>
 
+  </div>
+  
   <div>
+    <img [src]='current.image'>
     <p>{{current.description}}</p>    
   </div>
 </div>

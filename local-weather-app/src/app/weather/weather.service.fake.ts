@@ -8,7 +8,8 @@ export class WeatherServiceFake implements IWeatherService {
         country: 'US',
         date: 2022020202020,
         image: '',
-        temperature: 280.32,
+        temperatureFahrenheit: -40,
+        temperatureCelsius: -40,
         description: 'rain'
     }
     public getCurrentWeather(search: string | number, country?: string): Observable<ICurrentWeather>{

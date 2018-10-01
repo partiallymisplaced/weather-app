@@ -53,12 +53,17 @@ export class WeatherService implements IWeatherService {
       country: data.sys.country,
       date: data.dt * 1000,
       image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
-      temperature: this.convertKelvinToFahrenheith(data.main.temp),
+      temperatureFahrenheit: this.convertKelvinToFahrenheith(data.main.temp),
+      temperatureCelsius: this.convertKelvinToCelsius(data.main.temp),
       description: data.weather[0].description
     }
   }
 
   private convertKelvinToFahrenheith(kelvin: number): number {
     return kelvin * 9/5 - 456.67;
+  }
+
+  private convertKelvinToCelsius(kelvin: number): number {
+    return kelvin - 273.15;
   }
 }
