@@ -1,0 +1,18 @@
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid #3b6070;
+    height: 48px;
+    padding: 0 12px;
+    margin-top: 2em;
+    width: calc(100% - 24px);
+}
+input[type=text]:focus{
+    background-color: #eee;
+    outline: none;
+}
+.error {
+    color: #be4343;
+    font-size: .8em;
+    padding: 1em;
+    text-align: left;
+}

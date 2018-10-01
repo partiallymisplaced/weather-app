@@ -1,0 +1,17 @@
+.content {
+    color: #3b6070;
+    background-color: #fff;
+    min-height: 70vh;
+    width: 30%;
+    padding: 60px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .content {
+        width: 50%;
+    }
+}
+
+
