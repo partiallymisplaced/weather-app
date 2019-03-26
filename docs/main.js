@@ -401,7 +401,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     appId: '38b4dc3e321267ac1398ba8e9476da2a',
-    baseUrl: 'http://'
+    baseUrl: 'https://'
 };
 /*
  * In development mode, for easier debugging, you can ignore zone related error
